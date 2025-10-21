@@ -92,18 +92,18 @@ def go_service():
 # --------------- Home (fixed images) ---------------
 if st.session_state.page == "home":
     st.title("Lucy Bakery Menu Recommendation Service")
-    st.caption("메뉴 선택이 고민될 땐 **루시만의 AI 추천 서비스**를 이용해보세요!")
-
+    st.caption("메뉴 선택이 고민될 땐 루시만의 AI 추천 서비스를 이용해보세요!(메뉴판은 하단에 있습니다🤍)")
+  st.markdown("---")
+    st.button("AI 추천 서비스 시작하기 👉", on_click=go_service)
     # Expect images in the same directory as the app.
     img_files = ["menu_board_1.png", "menu_board_2.png"]
     exist_flags = [os.path.exists(p) for p in img_files]
     if all(exist_flags):
-        st.image(img_files, use_container_width=True, caption=["메뉴판 1", "메뉴판 2"])
+        st.image(img_files, use_container_width=True
     else:
         st.warning("menu_board_1.png, menu_board_2.png 파일을 앱과 같은 폴더에 넣으면 홈 화면에 자동 표시됩니다.")
 
-    st.markdown("---")
-    st.button("AI 추천 서비스 시작하기 👉", on_click=go_service)
+  
 
 # --------------- Service ---------------
 if st.session_state.page == "service":
@@ -111,7 +111,7 @@ if st.session_state.page == "service":
     tabs = st.tabs(["베이커리 조합 추천", "음료 추천"])
 
     with tabs[0]:
-        st.subheader("예산 안에서 가능한 조합 3세트 (1~3개 자동)")
+        st.subheader("best 조합 3개 제시⭐️")
         c1, c2 = st.columns([1,3])
         with c1:
             budget = st.number_input("총 예산(₩)", 0, 200000, 20000, step=1000)
