@@ -92,9 +92,8 @@ def go_service():
 # --------------- Home (fixed images) ---------------
 if st.session_state.page == "home":
     st.title("Lucy Bakery Menu Recommendation Service")
-    st.caption("메뉴 선택이 고민될 땐 루시만의 AI 추천 서비스를 이용해보세요!(메뉴판은 하단에 있습니다🤍)")
-  st.markdown("---")
-    st.button("AI 추천 서비스 시작하기 👉", on_click=go_service)
+    st.caption("메뉴 선택이 고민될 땐 루시만의 AI 추천 서비스를 이용해보세요!🤍")
+    
     # Expect images in the same directory as the app.
     img_files = ["menu_board_1.png", "menu_board_2.png"]
     exist_flags = [os.path.exists(p) for p in img_files]
@@ -103,7 +102,8 @@ if st.session_state.page == "home":
     else:
         st.warning("menu_board_1.png, menu_board_2.png 파일을 앱과 같은 폴더에 넣으면 홈 화면에 자동 표시됩니다.")
 
-  
+    st.markdown("---")
+    st.button("AI 추천 서비스 시작하기 👉", on_click=go_service)
 
 # --------------- Service ---------------
 if st.session_state.page == "service":
