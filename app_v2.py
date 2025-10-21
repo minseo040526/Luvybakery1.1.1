@@ -85,12 +85,12 @@ def show_combo(idx, items, total, budget):
                 st.text(", ".join(r['tags_list']) if r['tags_list'] else "-")
 
 # ================= UI =================
-st.title("Lucy Bakery Menu Recommendation Service")
+st.title("루시베이커리 메뉴 추천 서비스")
 
 tabs = st.tabs(["베이커리 조합 추천", "음료 추천"])
 
 with tabs[0]:
-    st.subheader("예산 안에서 가능한 조합 3세트 (1~3개 자동)")
+    st.subheader("예산 안에서 가능한 조합 3세트를 추천해드려요. 취향에 맞는 태그를 선택해주세요!")
     c1, c2 = st.columns([1,3])
     with c1:
         budget = st.number_input("총 예산(₩)", 0, 200000, 20000, step=1000)
